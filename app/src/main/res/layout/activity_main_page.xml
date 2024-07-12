@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLight"
+    android:orientation="vertical"
+    tools:context=".ui.MainPage"
+
+    >
+
+    <include
+        android:id="@+id/mytoolbar"
+        layout="@layout/toolbar" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:fillViewport="true"
+        android:padding="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/main_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="34dp"
+                android:layout_marginBottom="24dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:id="@+id/sajjada_circle"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/sajjada_circle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="20dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/sajjada_icon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/sajjada"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+
+                    android:id="@+id/main_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="الحل الأمثل لمشكلة السهو في الصلوات اليومية!"
+                    android:textAlignment="center"
+                    style="@style/TitleSmall"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <TextView
+                    android:id="@+id/main_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="باستعمال عداد الركع يمكنك متابعة صلاتك في كل ركعة وسجدة، لمنع الشرود الذهني والسهو."
+                    android:textAlignment="center"
+                    style="@style/BodySmallMedium"
+                    android:layout_marginBottom="16dp"
+                    />
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/help_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/trans_bg_buttons"
+                    android:drawableLeft="@drawable/lightbulb_minimalistic"
+                    android:drawablePadding="10dp"
+                    android:text="شرح استعمال العداد"
+                    style="@style/BodyNormalMedium"
+                    android:textColor="@color/primaryBrandLight"
+                    android:stateListAnimator="@null"
+                    android:clickable="true"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/main_prayers_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/main_prayers_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/cardLight"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="16dp"
+
+                    >
+
+
+                    <LinearLayout
+                        android:id="@+id/main_prayers_inner_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingVertical="24dp"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/main_prayers_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الصلوات اليومية"
+                            style="@style/TitleSmall"
+                            android:textColor="@color/secondaryBlackShadesLight"
+
+                            />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/main_prayers_recycler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+
+                            />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/secondary_prayers_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="24dp"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/secondary_prayers_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الصلوات المخصصة"
+                        style="@style/TitleSmall"
+                        android:textColor="@color/secondaryBlackShadesLight"
+                        />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/secondary_prayers_recycler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:clipToPadding="false"
+                            />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/more_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="24dp"
+                >
+
+                <TextView
+                    android:id="@+id/more_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المزيد"
+                    android:textColor="@color/secondaryBlackShadesLight"
+                    style="@style/TitleSmall"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    android:background="@color/cardLight"
+                    app:cardElevation="0dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/more_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:clipToPadding="false" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/show_more_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/trans_bg_buttons"
+                android:drawableLeft="@drawable/arrow_down"
+                android:text="عرض المزيد من الصلوات"
+                style="@style/BodyNormalMedium"
+                android:textColor="@color/primaryBrandLight"
+                android:stateListAnimator="@null"
+            android:clickable="true"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PrayerActivity"
+    android:orientation="vertical"
+    android:background="@color/backgroundLight"
+    >
+
+    <include
+        android:id="@+id/mytoolbar"
+        layout="@layout/toolbar"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/quba"
+                />
+            <ImageView
+                android:id="@+id/prayer_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sun1"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:tint="@color/tertiaryBlackShadesLight"
+
+                />
+
+            <TextView
+                android:id="@+id/title_prayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/prayer_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-35dp"
+                android:text="صلاة الظهر"
+                android:textColor="@color/tertiaryBlackShadesLight"
+                style="@style/TitleLarge"
+
+                />
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="-38dp"
+
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/secondaryBrandLight"
+        app:cardCornerRadius="16dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        android:background="@color/secondaryBrandLight"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TitleLarge"
+                    android:text="الركعة"
+                    android:textColor="@color/secondaryBlackShadesLight"
+                    android:textSize="32dp"
+                    android:layout_marginBottom="8dp"
+
+                    />
+                <RelativeLayout
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    >
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/RakaatProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cpb_background_progressbar_color="@color/backgroundLight"
+                    app:cpb_background_progressbar_width="5dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="@color/primaryBrandLight"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="true"
+                    app:cpb_progress="1"
+                    app:cpb_start_angle="270"
+                    app:cpb_progress_max="4"
+                    android:layout_centerInParent="true"
+                    />
+                    <TextView
+                        android:id="@+id/rakaatText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="1"
+                        android:textSize="56dp"
+                        android:textColor="@color/primaryBlackShadesLight"
+                        style="@style/TitleLarge"
+
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="32dp"
+
+                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TitleLarge"
+                    android:text="السجدة"
+                    android:textColor="@color/secondaryBlackShadesLight"
+                    android:textSize="32dp"
+                    android:layout_marginBottom="8dp"
+                    />
+                <RelativeLayout
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    >
+
+                    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                        android:id="@+id/sajjadaProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cpb_background_progressbar_color="@color/backgroundLight"
+                        app:cpb_background_progressbar_width="3dp"
+                        app:cpb_progress_direction="to_right"
+                        app:cpb_progressbar_color="@color/primaryBrandLight"
+                        app:cpb_progressbar_width="7dp"
+                        app:cpb_round_border="true"
+                        app:cpb_progress="1"
+                        app:cpb_start_angle="270"
+                        app:cpb_progress_max="2"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:id="@+id/sajjadaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="1"
+                        android:textSize="40dp"
+                        android:textColor="@color/primaryBlackShadesLight"
+                        style="@style/TitleLarge"
+
+                        />
+
+                </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/trans_bg_buttons"
+                app:backgroundTint="@color/secondaryBrandLight"
+                colo="@color/primaryBrandLight"
+                app:icon="@drawable/hand"
+                app:iconTint="@color/primaryBrandLight"
+                app:iconGravity="textEnd"
+                android:text="الإيقاف المؤقت"
+                style="@style/BodyNormalMedium"
+                android:textColor="@color/primaryBrandLight"
+                android:stateListAnimator="@null"
+                android:clickable="true"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

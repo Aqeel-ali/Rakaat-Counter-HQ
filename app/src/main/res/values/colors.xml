@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    //Brand
+    <color name="primaryBrandLight">#0B8457</color>
+    <color name="primaryBrandDark">#4CAF50</color>
+    <color name="secondaryBrandLight">#E7F1ED</color>
+    <color name="secondaryBrandDark">#29332F</color>
+
+    //General
+    //background
+    <color name="backgroundLight">#F7F7F7</color>
+    <color name="backgroundDark">#111512</color>
+    //Card
+    <color name="cardLight">#FFFFFF</color>
+    <color name="cardDark">#1A1E1D</color>
+
+    //Black Shades
+    <color name="primaryBlackShadesLight">#313131</color>
+    <color name="primaryBlackShadesDark">#E0E0E0</color>
+    <color name="secondaryBlackShadesLight">#717171</color>
+    <color name="secondaryBlackShadesDark">#A0A1A0</color>
+    <color name="tertiaryBlackShadesLight">#A5A5A5</color>
+    <color name="tertiaryBlackShadesDark">#6B6E6C</color>
+    <color name="quaternaryBlackShadesLight">#ECECEC</color>
+    <color name="quaternaryBlackShadesDark">#242825</color>
+
+
+    //Transparent Cards
+    //background
+    //40% opacity
+    <color name="transparentBackgroundPrimary" >#28121212</color>
+    //16% opacity
+    <color name="transparentBackgroundSecondary" >#10121212</color>
+    //onBackground
+    <color name="transparentOnBackgroundPrimary" >#EFEFEF</color>
+    <color name="transparentOnBackgroundSecondary" >#C8C8C8</color>
+    <color name="transparentOnBackgroundTertiary" >#B4B4B4</color>
+
+
+
+
+
+</resources>

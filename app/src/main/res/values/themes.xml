@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RakaatCounterHQ" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryBrandLight</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryBrandLight</item>
+        <!-- Color for the background of the activity. -->
+        <item name="android:windowBackground">@color/backgroundLight</item>
+        <!-- Color for card backgrounds. -->
+        <item name="cardViewStyle">@style/Custom.CardView</item>
+        //MAke the app from RTL
+
+        <item name="fontFamily">@font/tajawalmedium</item>
+<item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="Custom.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/cardLight</item>
+    </style>
+    <style name="Theme.RakaatCounterHQ" parent="Base.Theme.RakaatCounterHQ" />
+</resources>

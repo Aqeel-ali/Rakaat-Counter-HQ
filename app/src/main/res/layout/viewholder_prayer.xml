@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prayer_holder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:layout_marginTop="16dp"
+
+    >
+
+    <ImageView
+        android:id="@+id/prayer_icon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/gray_cirle_bg"
+        android:padding="14dp"
+        android:src="@drawable/sun_down"
+      />
+
+    <TextView
+        android:id="@+id/title_prayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="صلاة الصباح"
+        android:textAlignment="center"
+        style="@style/BodyNormalMedium"
+/>
+</LinearLayout>

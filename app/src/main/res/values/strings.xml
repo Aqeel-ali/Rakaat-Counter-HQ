@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Rakaat Counter HQ</string>
+
+    <string name="show_more_buttom">عرض المزيد من الصلوات</string>
+    <string name="show_less_buttom">إظهار الصلوات اليومية فقط</string>
+
+    //Prayers
+    <string name="morning_prayer">صلاة الصباح</string>
+    <string name="noon_prayer">صلاة الظهر</string>
+    <string name="afternoon_prayer">صلاة العصر</string>
+    <string name="sunset_prayer">صلاة المغرب</string>
+    <string name="asha_prayer">صلاة العشاء</string>
+
+    //other prayers
+    <string name="night_prayer">صلاة الليل</string>
+    <string name="daily_nawafil">النوافل اليومية</string>
+    <string name="prayer_of_signs">صلاة الآيات</string>
+    <string name="ghufran_prayer">صلاة الغفيلة</string>
+    <string name="friday_prayer">صلاة الجمعة</string>
+    <string name="eid_prayer">صلاة العيد</string>
+    <string name="visit_prayer">صلاة الزيارة</string>
+    <string name="manual_customize">التخصيص يدويا</string>
+
+
+</resources>

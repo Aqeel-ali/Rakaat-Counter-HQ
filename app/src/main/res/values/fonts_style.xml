@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    //body small
+    <style name="BodySmallRegular">
+        <item name="android:fontFamily">@font/tajawalregular</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="BodySmallMedium">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BodySmallBold">
+        <item name="android:fontFamily">@font/tajawalbold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    //body normal
+    <style name="BodyNormalRegular">
+        <item name="android:fontFamily">@font/tajawalregular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BodyNormalMedium">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BodyNormalBold">
+        <item name="android:fontFamily">@font/tajawalbold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    //body large
+    <style name="BodyLargeRegular">
+        <item name="android:fontFamily">@font/tajawalregular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyLargeMedium">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyLargeBold">
+        <item name="android:fontFamily">@font/tajawalbold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    //Title small
+
+    <style name="TitleSmall">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    //Title normal
+
+    <style name="TitleNormal">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    //Title large
+
+    <style name="TitleLarge">
+        <item name="android:fontFamily">@font/tajawalmedium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

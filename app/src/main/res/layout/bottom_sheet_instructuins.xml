@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:background="@drawable/sheet_line"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="إرشادات استعمال عداد الركع"
+        android:textColor="@color/secondaryBlackShadesLight"
+        style="@style/TitleSmall"
+        android:layout_marginBottom="16dp"
+        />
+
+    <include
+        android:id="@+id/setting_prayer_time"
+        layout="@layout/viewholder_more"
+        />
+
+
+</LinearLayout>

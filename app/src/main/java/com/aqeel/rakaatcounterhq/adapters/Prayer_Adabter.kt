@@ -13,7 +13,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aqeel.rakaatcounterhq.R
 import com.aqeel.rakaatcounterhq.models.Prayer
+import com.aqeel.rakaatcounterhq.ui.MainPage
 import com.aqeel.rakaatcounterhq.ui.PrayerActivity
+import com.aqeel.rakaatcounterhq.ui.UniversalBottomSheetDialogFragment
 import com.aqeel.rakaatcounterhq.utils
 
 
@@ -124,16 +126,28 @@ class PrayerAdaptor(val context:Context, val elements:MutableList<Prayer>):Recyc
         val prayer_holder:View=view.findViewById(R.id.prayer_holder)
 
         init {
-            view.setOnClickListener {
-                   //go to the prayer activity
-                val intent=Intent(context,PrayerActivity::class.java)
-                intent.putExtra("prayer",elements[adapterPosition].name)
-                intent.putExtra("image",elements[adapterPosition].image)
-                intent.putExtra("rakaars",elements[adapterPosition].rakaats)
-                context.startActivity(intent)
+                view.setOnClickListener {
+                    //go to the prayer activity
+                   var fragmentManager = (context as MainPage ).supportFragmentManager
 
+                    if (elements[adapterPosition].name == context.getString(R.string.daily_nawafil)) {
+                        UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_prayers_list).show(fragmentManager  , "daily_nawafil")
+                    }
+                    else if (elements[adapterPosition].name == context.getString(R.string.manual_customize)) {
+                        UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_manual_customize).show(fragmentManager  , "manual_customize")
+                    }
+                    else {
+                        val intent=Intent(context,PrayerActivity::class.java)
+                        intent.putExtra("prayer",elements[adapterPosition].name)
+                        intent.putExtra("image",elements[adapterPosition].image)
+                        intent.putExtra("rakaars",elements[adapterPosition].rakaats)
+                        context.startActivity(intent)
+                    }
+
+                }
+            }
+        }
         }
 
-    }
-}
-}
+
+

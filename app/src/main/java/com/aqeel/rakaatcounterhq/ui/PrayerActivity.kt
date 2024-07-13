@@ -6,6 +6,8 @@ import android.hardware.SensorManager
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.PersistableBundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +18,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.aqeel.rakaatcounterhq.R
+import com.google.android.material.button.MaterialButton
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
 class PrayerActivity : AppCompatActivity() {
@@ -31,7 +34,6 @@ class PrayerActivity : AppCompatActivity() {
     // Existing variables
     private var sajjadaCount = 0
     private var currentRakaat = 0
-
 
 
     //view var
@@ -68,6 +70,15 @@ class PrayerActivity : AppCompatActivity() {
         toolbar=findViewById(R.id.mytoolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        toolbar.setNavigationOnClickListener {
+
+
+                finish()
+
+
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -75,9 +86,17 @@ class PrayerActivity : AppCompatActivity() {
         }
 
     prayerName= intent.getStringExtra("prayer")!!
-    prayerRakaats = intent.getIntExtra("rakaars",0)
+    prayerRakaats = intent.getIntExtra("rakaars",4)
     prayerImage = intent.getStringExtra("image")!!
 
+
+        //NEW
+        var pause_button=findViewById<MaterialButton>(R.id.pause_button)
+
+
+        pause_button.setOnClickListener {
+
+        }
 
         //init views
         prayerTitle=findViewById(R.id.title_prayer)
@@ -109,39 +128,59 @@ class PrayerActivity : AppCompatActivity() {
             if (event != null) {
           if(event.sensor.type==Sensor.TYPE_PROXIMITY){
                   if(event.values[0]<proximitySensor.maximumRange){
+                      if (currentRakaat==0){
+                          currentRakaat++
+                          rakaatsText.text=currentRakaat.toString()
+                          rakaatsProgressBar.setProgressWithAnimation(currentRakaat.toFloat(),1000)
+                      }
                       sajjadaCount++
-                        sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(),1000)
-                        sajjadaText.text=sajjadaCount.toString()
+                      sajjadaText.text=sajjadaCount.toString()
+                      sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(),1000)
                       if(sajjadaCount==2){
                           currentRakaat++
-                            rakaatsText.text=currentRakaat.toString()
-                            sajjadaCount=0
-                          sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(),1000)
-                            sajjadaText.text=sajjadaCount.toString()
-                          rakaatsProgressBar.setProgressWithAnimation(currentRakaat.toFloat(),1000)
-                          if(currentRakaat==prayerRakaats){
+
+                          Handler(Looper.getMainLooper()).postDelayed({
+                              sajjadaCount = 0
+                              sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(), 1000)
+                              sajjadaText.text = sajjadaCount.toString()
+                              rakaatsText.text=currentRakaat.toString()
+                              rakaatsProgressBar.setProgressWithAnimation(currentRakaat.toFloat(),1000)
+                          }, 1000) // Delay matches the animation duration
+
+                          if(currentRakaat==prayerRakaats+1){
                               Toast.makeText(this@PrayerActivity,"Prayer Completed",Toast.LENGTH_SHORT).show()
                               currentRakaat=0
-                                sajjadaCount=0
-                              rakaatsProgressBar.progress=0f
-                                rakaatsText.text=currentRakaat.toString()
-                                sajjadaProgressBar.progress=0f
-                                sajjadaText.text=sajjadaCount.toString()
+                              sajjadaCount=0
                               rakaatsProgressBar.setProgressWithAnimation(currentRakaat.toFloat(),1000)
-                                sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(),1000)
+                              sajjadaProgressBar.setProgressWithAnimation(sajjadaCount.toFloat(),1000)
+                              rakaatsText.text=currentRakaat.toString()
+                              sajjadaText.text=sajjadaCount.toString()
+
+
 
                           }
                       }
+
+
+
+
+
+
+
                   }
               }
           }
         }
 
+
+
         override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
 
         }
 
+
     }
+
 
 
 }

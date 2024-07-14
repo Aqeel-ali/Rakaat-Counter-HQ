@@ -2,6 +2,8 @@ package com.aqeel.rakaatcounterhq.ui
 
 
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
@@ -17,6 +19,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aqeel.rakaatcounterhq.Data.getMainPrayerList
@@ -50,6 +53,7 @@ class MainPage : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
     private lateinit var helpIcon:ImageButton
     private lateinit var help_button:AppCompatButton
+    private lateinit var mainScroll:NestedScrollView
 
     //use classes from functions folder
    private val myAnimations = animations()
@@ -83,6 +87,34 @@ class MainPage : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+//
+//        // Setup gesture detector for swipe up action
+        val gestureDetector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onFling(
+                e1: MotionEvent?,
+                e2: MotionEvent,
+                velocityX: Float,
+                velocityY: Float
+            ): Boolean {
+
+                if (mainScroll.canScrollVertically(1) && velocityY > 0) {
+                    showMoreButton.performClick()
+                }
+                //if scroll view id in the end of the scroll and scroll up then hide the more prayers
+                if (!mainScroll.canScrollVertically(-1) && velocityY < 0) {
+                    showMoreButton.performClick()
+                }
+
+                return super.onFling(e1, e2, velocityX, velocityY)
+            }
+        })
+
+        mainScroll=findViewById(R.id.main_scroll)
+
+        mainScroll.setOnTouchListener { _, event ->
+            gestureDetector.onTouchEvent(event)
+            false
         }
 
 
@@ -122,7 +154,6 @@ class MainPage : AppCompatActivity() {
                 toolbar.setBackgroundColor(getColor(R.color.white))
                 helpIcon.visibility=ImageView.VISIBLE
 
-
                 myAnimations.translationAnimation(mainPrayersLayout,"translationY",+400f,0f)
 
                 //header fade out animation
@@ -131,6 +162,10 @@ class MainPage : AppCompatActivity() {
 
                 //show the secondary prayers layout and animate
                 myAnimations.translationAnimation(secondaryPrayersLayout,"translationY",+400f,0f)
+                secondaryPrayersLayout.visibility=LinearLayout.VISIBLE
+
+                //show the more category layout
+                myAnimations.translationAnimation(moreCategoryLayout,"translationY",+400f,0f)
                 moreCategoryLayout.visibility=LinearLayout.VISIBLE
 
 

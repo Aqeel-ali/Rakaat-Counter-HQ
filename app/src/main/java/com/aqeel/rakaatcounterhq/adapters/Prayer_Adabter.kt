@@ -131,7 +131,7 @@ class PrayerAdaptor(val context:Context, val elements:MutableList<Prayer>):Recyc
                    var fragmentManager = (context as MainPage ).supportFragmentManager
 
                     if (elements[adapterPosition].name == context.getString(R.string.daily_nawafil)) {
-                        UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_prayers_list).show(fragmentManager  , "daily_nawafil")
+                        UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_daily_nawafil).show(fragmentManager  , "daily_nawafil")
                     }
                     else if (elements[adapterPosition].name == context.getString(R.string.manual_customize)) {
                         UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_manual_customize).show(fragmentManager  , "manual_customize")

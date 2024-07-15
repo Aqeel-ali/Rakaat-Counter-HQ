@@ -35,6 +35,12 @@ android {
     }
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -48,6 +54,7 @@ dependencies {
     implementation("com.balysv:material-ripple:1.0.2")
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
     implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
+    implementation("io.github.ShawnLin013:number-picker:2.4.13")
 
 
 }

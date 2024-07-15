@@ -35,9 +35,12 @@ android {
     }
 }
 
+
 buildscript {
     repositories {
         mavenCentral()
+        maven { url = uri("https://www.jitpack.io" ) }
+
     }
 }
 
@@ -55,6 +58,9 @@ dependencies {
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
     implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
     implementation("io.github.ShawnLin013:number-picker:2.4.13")
+    implementation("com.github.trinnguyen:Android-SegmentView:master-SNAPSHOT")
+
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.aqeel.rakaatcounterhq.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.aqeel.rakaatcounterhq.R
 import com.aqeel.rakaatcounterhq.adapters.InstructionsAdabter
 import com.aqeel.rakaatcounterhq.adapters.nawafilAdabter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.trinnguyen.SegmentView
 
 class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private var layoutResId: Int = 0
@@ -40,7 +42,49 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         when (layoutResId) {
+
             R.layout.bottom_sheet_settings -> {
+
+                var sharedPref = requireActivity().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+                var incrementByClick = sharedPref.getBoolean("IncrementByClick", false)
+
+                val segmentViewClick = view.findViewById<SegmentView>(R.id.segment_Click_settings)
+                segmentViewClick.setText(0,"تعطيل")
+                segmentViewClick.setText(1,"تفعيل")
+                segmentViewClick.setSelectedIndex(if (incrementByClick) 1 else 0)
+
+                val segmentViewSounds = view.findViewById<SegmentView>(R.id.segment_sounds_settings)
+                segmentViewSounds.setText(0,"تعطيل")
+                segmentViewSounds.setText(1,"تفعيل")
+                segmentViewSounds.setSelectedIndex(1)
+
+                segmentViewClick.setOnSegmentItemSelectedListener(object : SegmentView.OnSegmentItemSelectedListener {
+                    override fun onSegmentItemSelected(position: Int) {
+
+                        val editor = sharedPref.edit()
+                        editor.putBoolean("IncrementByClick", position == 1)
+                        editor.apply()
+                        //change the value of incrementByClick in prayer activity
+                        activity?.let {
+                            if (it is PrayerActivity) {
+                                it.updateIncrementByClick( position == 1)
+                            }
+                        }
+
+
+
+                    }
+
+                    override fun onSegmentItemReselected(index: Int) {
+                        TODO("Not yet implemented")
+                    }
+                }
+                )
+
+
+
+
+
 
             }
             R.layout.bottom_sheet_daily_nawafil -> {

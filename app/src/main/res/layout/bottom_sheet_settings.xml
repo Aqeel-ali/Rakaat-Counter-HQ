@@ -1,8 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/bottom_sheet_bg">
 
     <View
         android:layout_width="48dp"
@@ -22,10 +25,64 @@
         style="@style/TitleSmall"
         />
 
-    <include
-        android:id="@+id/setting_prayer_time"
-        layout="@layout/viewholder_more"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="العد عند اللمس"
+        android:textColor="@color/secondaryBlackShadesLight"
+        android:layout_marginBottom="16dp"
+        style="@style/BodyLargeMedium"
         />
+    <com.trinnguyen.SegmentView
+        android:id="@+id/segment_Click_settings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:unselectedTextColor="@color/secondaryBlackShadesLight"
+        app:selectedTextColor="@color/cardLight"
+        app:unselectedBackgroundColor="@color/cardLight"
+        app:selectedBackgroundColor="@color/primaryBrandLight"
+        app:textAppearance="@style/BodyNormalMedium"
+        app:innerPadding="10dp"
+        app:numSegments="2"
+        app:selectedIndex="1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عند تفعيل هذه الخاصية لن يعمل المستشعر، وطريقة الاستعمال هي بأن تلمس الهاتف بأنفك عند كل سجدة."
+    style="@style/BodyNormalRegular"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/secondaryBlackShadesLight"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الاصوات"
+        android:textColor="@color/secondaryBlackShadesLight"
+        android:layout_marginBottom="16dp"
+        style="@style/BodyLargeMedium"
+        />
+
+    <com.trinnguyen.SegmentView
+        android:id="@+id/segment_sounds_settings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:unselectedTextColor="@color/secondaryBlackShadesLight"
+        app:selectedTextColor="@color/cardLight"
+        app:unselectedBackgroundColor="@color/cardLight"
+        app:selectedBackgroundColor="@color/primaryBrandLight"
+        app:textAppearance="@style/BodyNormalMedium"
+        app:innerPadding="10dp"
+        app:numSegments="2"
+        app:selectedIndex="1"
+        android:layout_marginBottom="16dp"
+        />
+
+
+
+
+
 
 
 </LinearLayout>

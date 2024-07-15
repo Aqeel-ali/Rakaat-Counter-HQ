@@ -183,6 +183,7 @@ class MainPage : AppCompatActivity() {
                 main_inner_layout.setHorizontalGravity(LinearLayout.TEXT_ALIGNMENT_VIEW_START)
 
 
+
                 //change the layout manager to start
                 myLayoutsManager.setLayoutManager(this,mainPrayerRecyclerView,FlexDirection.ROW,FlexWrap.WRAP,JustifyContent.FLEX_START)
 

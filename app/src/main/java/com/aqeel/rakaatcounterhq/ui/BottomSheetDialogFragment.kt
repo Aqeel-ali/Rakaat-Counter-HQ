@@ -6,7 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.aqeel.rakaatcounterhq.Data.getInstructionsList
+import com.aqeel.rakaatcounterhq.Data.getNawafilList
 import com.aqeel.rakaatcounterhq.R
+import com.aqeel.rakaatcounterhq.adapters.InstructionsAdabter
+import com.aqeel.rakaatcounterhq.adapters.nawafilAdabter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
@@ -39,7 +43,13 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
             R.layout.bottom_sheet_settings -> {
 
             }
-            R.layout.bottom_sheet_prayers_list -> {
+            R.layout.bottom_sheet_daily_nawafil -> {
+            var recyclerView = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.daily_nawafil_recycler)
+             var nawafilList= getNawafilList()
+            val adabter =nawafilAdabter(requireContext(),nawafilList)
+            recyclerView.adapter = adabter
+            recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context,2)
+
 
             }
             R.layout.bottom_sheet_manual_customize -> {
@@ -69,6 +79,13 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
                 }
 
 
+            }
+            R.layout.bottom_sheet_instructuins -> {
+                var recyclerView = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.instructions_recycler)
+               val Instructionslist=  getInstructionsList()
+                val adapter = InstructionsAdabter(requireContext(),Instructionslist)
+                recyclerView.adapter = adapter
+                recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
 
             }
 

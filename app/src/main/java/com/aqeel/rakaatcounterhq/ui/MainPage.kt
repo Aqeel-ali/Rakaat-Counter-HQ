@@ -255,7 +255,7 @@ class MainPage : AppCompatActivity() {
 
         //Help icon click
         helpIcon.setOnClickListener {
-            Toast.makeText( this,"Help Icon Click", Toast.LENGTH_SHORT).show()
+            UniversalBottomSheetDialogFragment.newInstance(R.layout.bottom_sheet_instructuins).show(supportFragmentManager, "instructions")
         }
 
 

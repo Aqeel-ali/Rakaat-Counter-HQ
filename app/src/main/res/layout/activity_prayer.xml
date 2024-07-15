@@ -210,12 +210,9 @@
                 android:text="الإيقاف المؤقت"
                 style="@style/BodyNormalMedium"
                 android:textColor="@color/primaryBrandLight"
-                android:stateListAnimator="@null"
-                android:clickable="true"
                 android:layout_marginTop="16dp"
                 android:paddingVertical="12dp"
                 android:paddingHorizontal="16dp"
-
                 />
 
 

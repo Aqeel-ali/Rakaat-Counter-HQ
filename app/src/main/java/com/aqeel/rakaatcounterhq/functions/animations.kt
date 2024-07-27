@@ -19,4 +19,10 @@ class animations {
         animation.start()
     }
 
+    fun showView(layout: LinearLayout){
+        layout.alpha = 0f
+        layout.visibility = LinearLayout.VISIBLE
+        fadeAnimation(layout, 0f, 1f)
+    }
+
 }

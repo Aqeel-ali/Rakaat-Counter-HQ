@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import com.aqeel.rakaatcounterhq.Data.getInstructionsList
 import com.aqeel.rakaatcounterhq.Data.getNawafilList
 import com.aqeel.rakaatcounterhq.R
@@ -45,6 +46,10 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
             R.layout.bottom_sheet_settings -> {
 
+                var close = view.findViewById<ImageView>(R.id.close_settings)
+                close.setOnClickListener {
+                    dismiss()
+                }
                 var sharedPref = requireActivity().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
                 var incrementByClick = sharedPref.getBoolean("IncrementByClick", false)
 
@@ -79,11 +84,8 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
                         TODO("Not yet implemented")
                     }
                 }
+
                 )
-
-
-
-
 
 
             }
@@ -126,10 +128,15 @@ class UniversalBottomSheetDialogFragment : BottomSheetDialogFragment() {
             }
             R.layout.bottom_sheet_instructuins -> {
                 var recyclerView = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.instructions_recycler)
+                var okButton = view.findViewById<Button>(R.id.ok_button_instructions)
                val Instructionslist=  getInstructionsList()
                 val adapter = InstructionsAdabter(requireContext(),Instructionslist)
                 recyclerView.adapter = adapter
                 recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+
+                okButton.setOnClickListener {
+                    dismiss()
+                }
 
             }
 

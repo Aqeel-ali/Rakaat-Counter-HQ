@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/bottom_sheet_bg"
-    >
+    android:background="@drawable/bottom_sheet_bg">
 
     <View
         android:layout_width="48dp"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="إرشادات استعمال عداد الركع"
         android:textColor="@color/secondaryBlackShadesLight"
-        style="@style/TitleSmall"
+        style="@style/TitleNormal"
         android:layout_marginBottom="16dp"
         />
 
@@ -30,6 +30,22 @@
     android:layout_height="wrap_content"
 
     />
+    <Button
+        android:id="@+id/ok_button_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        app:cornerRadius="12dp"
+        android:backgroundTint="@color/primaryBrandLight"
+        android:text="حسناً"
+        style="@style/BodyNormalMedium"
+        android:textColor="@color/cardLight"
+        android:clickable="true"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+
+        />
 
 
 </LinearLayout>

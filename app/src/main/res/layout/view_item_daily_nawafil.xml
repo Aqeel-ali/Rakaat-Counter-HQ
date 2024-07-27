@@ -20,8 +20,8 @@ android:background="@drawable/nawafil_bg"
 
     <ImageView
         android:id="@+id/nawafil_icon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
         android:src="@drawable/sun1"
         android:layout_margin="10dp"
         app:tint="@color/tertiaryBlackShadesLight"
@@ -41,9 +41,8 @@ android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content"
                 android:text="نافلة الظهر"
                 style="@style/BodyLargeRegular"
-                android:textColor="@color/secondaryBlackShadesLight"
+                android:textColor="@color/primaryBlackShadesLight"
                 />
-
         </LinearLayout>
 
 

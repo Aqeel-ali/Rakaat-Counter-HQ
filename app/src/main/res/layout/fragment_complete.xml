@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLight"
+    tools:context=".fragments.tashahudFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image_tashahud"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/heart_angle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                />
+            <ImageView
+                android:id="@+id/circle_tashahud"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/red_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/title_tashahud"
+            style="@style/TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="48dp"
+            android:text="تقبل الله صلاتك"
+            android:textColor="@color/primaryBlackShadesLight"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="بعد الصلاة يمكنك أن تقوم بما يلي:"
+            android:textAlignment="center"
+            android:textColor="@color/secondaryBlackShadesLight"
+            style="@style/BodyNormalMedium"
+            android:layout_marginBottom="12dp"
+            />
+
+       <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/recycler_complete"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textAlignment="center"
+           />
+    </LinearLayout>
+
+
+</FrameLayout>

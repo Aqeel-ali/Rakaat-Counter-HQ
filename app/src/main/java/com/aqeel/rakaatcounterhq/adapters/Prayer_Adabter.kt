@@ -37,6 +37,7 @@ class PrayerAdaptor(val context:Context, val elements:MutableList<Prayer>):Recyc
         var originalTextSize: Float = 14f
         // original end margin
         var originalEndMargin: Int = utils.convertDpToPixel(12)
+        var originalWidthHolder: Int = utils.convertDpToPixel(90)
 
 
 
@@ -75,19 +76,29 @@ class PrayerAdaptor(val context:Context, val elements:MutableList<Prayer>):Recyc
             holder.image.setColorFilter(tintColor, PorterDuff.Mode.SRC_IN)
 
             //change width and height
-            holder.image.layoutParams.width = utils.convertDpToPixel(60)
-            holder.image.layoutParams.height = utils.convertDpToPixel(60)
+            holder.image.layoutParams.width = utils.convertDpToPixel(48)
+            holder.image.layoutParams.height = utils.convertDpToPixel(48)
 
             //change padding
-            holder.image.setPadding(utils.convertDpToPixel(12), utils.convertDpToPixel(12),utils.convertDpToPixel(12),utils.convertDpToPixel(12))
+            holder.image.setPadding(utils.convertDpToPixel(14), utils.convertDpToPixel(14),utils.convertDpToPixel(14),utils.convertDpToPixel(14))
 
-            //change text size
-            holder.title.textSize = 11f
 
-            //set end margin
-            val params = holder.prayer_holder.layoutParams as ViewGroup.MarginLayoutParams
-            params.setMargins(0, utils.convertDpToPixel(28), utils.convertDpToPixel(20), 0)
-            holder.prayer_holder.layoutParams = params
+            if (currntItem.name==context.getString(R.string.manual_customize)){
+                //set prime color for tint color
+                holder.image.setColorFilter(context.resources.getColor(R.color.primaryBrandLight), PorterDuff.Mode.SRC_IN)
+                //change background
+                holder.image.setBackgroundResource(R.drawable.green_cirle_bg)
+                //change text color
+                holder.title.setTextColor(context.resources.getColor(R.color.primaryBrandLight))
+            }
+
+            //set width
+            holder.prayer_holder.layoutParams.width = utils.convertDpToPixel(73)
+
+//            //set end margin
+//            val params = holder.prayer_holder.layoutParams as ViewGroup.MarginLayoutParams
+//            params.setMargins(0, utils.convertDpToPixel(28), utils.convertDpToPixel(20), 0)
+//            holder.prayer_holder.layoutParams = params
         }
         else {
             //restore background id
@@ -100,15 +111,18 @@ class PrayerAdaptor(val context:Context, val elements:MutableList<Prayer>):Recyc
             //restore padding
             holder.image.setPadding(originalPadding, originalPadding, originalPadding, originalPadding)
 
-            //restore text size
-            holder.title.textSize = originalTextSize
+            //set width
+            holder.prayer_holder.layoutParams.width = originalWidthHolder
 
-            //restore end margin
-            val params = holder.prayer_holder.layoutParams as ViewGroup.MarginLayoutParams
-            params.setMargins(originalEndMargin, utils.convertDpToPixel(28), originalEndMargin, 0)
-            holder.prayer_holder.layoutParams = params
+//            //restore end margin
+//            val params = holder.prayer_holder.layoutParams as ViewGroup.MarginLayoutParams
+//            params.setMargins(originalEndMargin, utils.convertDpToPixel(24), originalEndMargin, 0)
+//            holder.prayer_holder.layoutParams = params
+
+
 
         }
+
 
     }
 

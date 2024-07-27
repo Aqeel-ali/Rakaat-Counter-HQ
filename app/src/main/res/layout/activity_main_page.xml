@@ -85,7 +85,7 @@
                     android:textAlignment="center"
                     style="@style/TitleSmall"
                     android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginBottom="8dp"
                     />
 
                 <TextView
@@ -96,6 +96,7 @@
                     android:textAlignment="center"
                     style="@style/BodySmallMedium"
                     android:layout_marginBottom="16dp"
+                    android:textColor="@color/secondaryBlackShadesLight"
                     />
 
 
@@ -106,12 +107,13 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/trans_bg_buttons"
                     android:drawableLeft="@drawable/lightbulb_minimalistic"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="8dp"
                     android:text="شرح استعمال العداد"
                     style="@style/BodyNormalMedium"
                     android:textColor="@color/primaryBrandLight"
                     android:stateListAnimator="@null"
                     android:clickable="true"
+                    android:paddingHorizontal="16dp"
                     />
             </LinearLayout>
 
@@ -251,24 +253,28 @@
             </LinearLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
 
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/show_more_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/trans_bg_buttons"
-                android:drawableLeft="@drawable/arrow_down"
+                app:backgroundTint="@color/secondaryBrandLight"
+                colo="@color/primaryBrandLight"
+                app:icon="@drawable/arrow_down"
+                app:iconTint="@color/primaryBrandLight"
+                app:iconGravity="textEnd"
                 android:text="عرض المزيد من الصلوات"
                 style="@style/BodyNormalMedium"
                 android:textColor="@color/primaryBrandLight"
                 android:stateListAnimator="@null"
-            android:clickable="true"
-                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:layout_marginTop="24dp"
                 android:paddingVertical="12dp"
                 android:paddingHorizontal="16dp"
-
                 />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

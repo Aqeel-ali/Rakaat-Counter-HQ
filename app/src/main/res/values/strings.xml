@@ -20,6 +20,8 @@
     <string name="eid_prayer">صلاة العيد</string>
     <string name="visit_prayer">صلاة الزيارة</string>
     <string name="manual_customize">التخصيص يدويا</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

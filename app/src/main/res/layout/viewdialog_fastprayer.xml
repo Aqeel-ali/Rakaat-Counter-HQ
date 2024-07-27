@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp"
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                >
+
+                <ImageView
+                    android:id="@+id/circle_tashahud"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/sajjada_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+                <ImageView
+                    android:id="@+id/image_tashahud"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/sad_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/some_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="صلاتك كانت سريعة"
+                android:textAlignment="center"
+                style="@style/TitleSmall"
+                android:textColor="@color/primaryBlackShadesLight"
+                android:layout_marginBottom="4dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="من أجل الحصول على الأجر الكامل في الصلاة لا بد من الخشوع فيها والإبطاء بالصلاة. لمعرفة الكيفية الصحيحة للصلاة انتقل إلى إرشادات الصلاة."
+                android:textAlignment="center"
+                android:textColor="@color/secondaryBlackShadesLight"
+                style="@style/BodySmallMedium"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                android:id="@+id/show_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/primaryBrandLight"
+                android:text="إرشادات حول الصلاة"
+                style="@style/BodyNormalMedium"
+                android:textColor="@color/cardLight"
+                android:clickable="true"
+              android:layout_marginBottom="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+
+                />
+            <Button
+                android:id="@+id/close_dialogButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/secondaryBrandLight"
+                android:text="إغلاق"
+                style="@style/BodyNormalMedium"
+                android:textColor="@color/primaryBrandLight"
+                android:clickable="true"
+
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+
+                />
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

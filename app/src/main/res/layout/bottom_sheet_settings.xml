@@ -16,14 +16,37 @@
         />
 
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="الإعدادات"
-        android:textColor="@color/secondaryBlackShadesLight"
+        android:orientation="horizontal"
         android:layout_marginBottom="16dp"
-        style="@style/TitleSmall"
-        />
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="إعدادات عداد الركع"
+            android:textColor="@color/secondaryBlackShadesLight"
+            style="@style/TitleNormal"
+
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/close_settings"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/x"
+            android:layout_gravity="end|center_vertical"
+
+            />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,15 +59,15 @@
     <com.trinnguyen.SegmentView
         android:id="@+id/segment_Click_settings"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         app:unselectedTextColor="@color/secondaryBlackShadesLight"
         app:selectedTextColor="@color/cardLight"
         app:unselectedBackgroundColor="@color/cardLight"
         app:selectedBackgroundColor="@color/primaryBrandLight"
         app:textAppearance="@style/BodyNormalMedium"
-        app:innerPadding="10dp"
         app:numSegments="2"
         app:selectedIndex="1"
+        android:elevation="0dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -67,16 +90,16 @@
     <com.trinnguyen.SegmentView
         android:id="@+id/segment_sounds_settings"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         app:unselectedTextColor="@color/secondaryBlackShadesLight"
         app:selectedTextColor="@color/cardLight"
         app:unselectedBackgroundColor="@color/cardLight"
         app:selectedBackgroundColor="@color/primaryBrandLight"
         app:textAppearance="@style/BodyNormalMedium"
-        app:innerPadding="10dp"
         app:numSegments="2"
         app:selectedIndex="1"
         android:layout_marginBottom="16dp"
+        android:elevation="0dp"
         />
 
 

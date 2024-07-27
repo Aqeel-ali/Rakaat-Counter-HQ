@@ -34,6 +34,7 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
+import com.google.android.material.button.MaterialButton
 
 
 class MainPage : AppCompatActivity() {
@@ -45,7 +46,7 @@ class MainPage : AppCompatActivity() {
     private lateinit var mainPrayerAdaptor: PrayerAdaptor
     private lateinit var secondPrayerAdaptor: PrayerAdaptor
     private lateinit var moreCategoryAdaptor: More_Adabter
-    private lateinit var showMoreButton:Button
+    private lateinit var showMoreButton:MaterialButton
     private lateinit var mainHeader:LinearLayout
     private lateinit var mainPrayersLayout:LinearLayout
     private lateinit var moreCategoryLayout:LinearLayout
@@ -172,7 +173,7 @@ class MainPage : AppCompatActivity() {
 
                 //change the button text and icon
                 showMoreButton.text = getString(R.string.show_less_buttom)
-                showMoreButton.setCompoundDrawablesRelativeWithIntrinsicBounds( 0,0, if (mainHeader.visibility == LinearLayout.GONE) R.drawable.arrow_up else R.drawable.arrow_down,0)
+                showMoreButton.icon = getDrawable(R.drawable.arrow_up)
 
 
 
@@ -225,7 +226,7 @@ class MainPage : AppCompatActivity() {
 
                 //change the button text and icon
                 showMoreButton.text = getString(R.string.show_more_buttom)
-                showMoreButton.setCompoundDrawablesRelativeWithIntrinsicBounds( 0,0, if (mainHeader.visibility == LinearLayout.GONE) R.drawable.arrow_up else R.drawable.arrow_down,0)
+                showMoreButton.icon = getDrawable(R.drawable.arrow_down)
 
                 //show the card view
                 main_prayers_card.setCardBackgroundColor(AppCompatResources.getColorStateList(this, R.color.white))
@@ -244,12 +245,7 @@ class MainPage : AppCompatActivity() {
 
 //change the background of the prayer_icon ImageView
                 mainPrayerAdaptor.changeBackgroundResource(R.drawable.gray_cirle_bg,isExpanded,0)
-
-                //change the tint color of the prayer_icon ImageView
-
-
             }
-
 
         }
 

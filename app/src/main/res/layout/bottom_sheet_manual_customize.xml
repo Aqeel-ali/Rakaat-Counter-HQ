@@ -22,7 +22,7 @@
         android:text="حدد عدد الركعات"
         android:textColor="@color/secondaryBlackShadesLight"
         android:layout_marginBottom="10dp"
-        style="@style/TitleSmall"
+        style="@style/TitleNormal"
         />
     <com.shawnlin.numberpicker.NumberPicker
         android:id="@+id/number_picker"
@@ -48,20 +48,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginTop="12dp"
 
         >
         <Button
-            android:id="@+id/rakaat_100"
+            android:id="@+id/rakaat2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cardLight"
             app:cornerRadius="100dp"
-            android:text="100 ركعة"
+            android:text="ركعتان"
             android:textColor="@color/secondaryBlackShadesLight"
             style="@style/BodyLargeRegular"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginEnd="12dp"
             />
 
         <Button
@@ -73,39 +73,36 @@
             android:text="50 ركعة"
             android:textColor="@color/secondaryBlackShadesLight"
             style="@style/BodyLargeRegular"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginEnd="12dp"
             />
+
         <Button
-            android:id="@+id/rakaat2"
+            android:id="@+id/rakaat_100"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cardLight"
             app:cornerRadius="100dp"
-            android:text="ركعتان"
+            android:text="100 ركعة"
             android:textColor="@color/secondaryBlackShadesLight"
             style="@style/BodyLargeRegular"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginEnd="12dp"
             />
+
 
     </LinearLayout>
 
-    <Button
-
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/start_prayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:cornerRadius="12dp"
-        android:backgroundTint="@color/primaryBrandLight"
-        android:text="بدء الصلاة"
         style="@style/BodyNormalMedium"
-        android:textColor="@color/cardLight"
-        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:paddingVertical="12dp"
+        android:backgroundTint="@color/primaryBrandLight"
+        android:clickable="true"
         android:paddingHorizontal="16dp"
-
-        />
-
-
+        android:paddingVertical="12dp"
+        android:text="بدء الصلاة"
+        android:textColor="@color/cardLight"
+        app:cornerRadius="12dp" />
 </LinearLayout>

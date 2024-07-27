@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/prayer_holder"
-    android:layout_width="wrap_content"
+    android:layout_width="90dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_marginTop="16dp"
-
+    android:gravity="center_horizontal"
+    android:layout_marginHorizontal="6dp"
     >
 
     <ImageView
         android:id="@+id/prayer_icon"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/gray_cirle_bg"
-        android:padding="14dp"
+        android:padding="18dp"
         android:src="@drawable/sun_down"
       />
 
@@ -25,7 +25,7 @@
         android:id="@+id/title_prayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:text="صلاة الصباح"
         android:textAlignment="center"
         style="@style/BodyNormalMedium"
